@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket Io</title>
+</head>
+
+<body>
+    <h1 id="data">Hello This is Socket Io</h1>
+
+    <input type="email" name="" id="email">
+    <input type="password" name="" id="password">
+    <button onclick="handleSend()">send</button>
+
+    <!-- Socket Io Script  -->
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io("/cricketCup")
+
+        socket.on('cricketCupEvent', (data) => {
+            document.getElementById('data').innerText = data
+        })
+
+        // const handleSend = () => {
+        //     // socket.send('hello')
+        //     const email = document.getElementById('email').value
+        //     const password = document.getElementById('password').value
+        //     socket.emit('testEvent', { email, password })
+        // }
+
+        // socket.on("fifaWorldCup", (data) => {
+        //     console.log(data);
+        //     document.getElementById('data').innerText = data
+        // })
+
+        // socket.on('message', (data) => {
+        //     console.log(data);
+        // })
+    </script>
+
+</body>
+
+</html>
